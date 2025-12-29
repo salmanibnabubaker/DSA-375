@@ -135,6 +135,10 @@ vector<int> dijkstra(int V, vector<vector<int>> &edges, int src) {
         int node=temp.second;
         int dist=temp.first;
 
+        if(dist>shortDist[node]){
+            continue;
+        }
+
         for(int i=0;i<adj[node].size();i++){
             int adjNode=adj[node][i].second;
             int adjWeight=adj[node][i].first;
